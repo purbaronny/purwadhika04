@@ -16,26 +16,25 @@ public class Practice04GuessNumber {
         int max = Integer.parseInt(scanner.next());
         scanner.nextLine();
         int randomNumber = random.nextInt(max) + 1;
-        int kesempatan = 0;
-        int tebakan = 0;
+        int times = 0;
+        int guess = 0;
 
-        System.out.println("Selamat datang di Tebak Angka!");
-        System.out.println("Pilih angka antara 1 sampai " + max + ".");
-        System.out.println("Coba tebak!");
+        System.out.println("Welcome to Guess the Number!");
+        System.out.println("Select a number between 1 and " + max + ".");
+        System.out.println("Take a guess!");
 
-        while (tebakan != randomNumber) {
-            System.out.print("Masukkan tebakan Anda: ");
-            tebakan = scanner.nextInt();
+        while (guess != randomNumber) {
+            System.out.print("Enter your guess: ");
+            guess = scanner.nextInt();
             scanner.nextLine();
-            kesempatan++;
+            times++;
 
-            if (tebakan < randomNumber) {
-                System.out.println("Terlalu rendah! Coba lagi.");
-            } else if (tebakan > randomNumber) {
-                System.out.println("Terlalu tinggi! Coba lagi.");
+            if (guess < randomNumber) {
+                System.out.println("Too low");
+            } else if (guess > randomNumber) {
+                System.out.println("Too high");
             } else {
-                System.out.println("Selamat! Anda menebak dengan benar.");
-                System.out.println("Jumlah percobaan: " + kesempatan);
+                System.out.println("The number of attempts: " + times);
             }
         }
 
